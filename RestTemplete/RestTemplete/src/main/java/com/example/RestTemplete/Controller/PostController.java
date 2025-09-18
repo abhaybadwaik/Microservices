@@ -11,11 +11,12 @@ public class PostController {
     PostService postService;
 
     @GetMapping("/{id}")
-    public String getPost(@PathVariable int id){
+    public String getPost(@PathVariable int id) {
         return postService.getPost(id);
     }
-    @PostMapping
-    public String createPost(){
+
+    @PostMapping("/allPost")
+    public String createPost() {
         return postService.createPost();
     }
 }
