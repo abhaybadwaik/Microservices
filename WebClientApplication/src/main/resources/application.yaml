@@ -1,2 +1,4 @@
 server:
   port: 7866
+  error:
+    include-message: always

@@ -22,4 +22,9 @@ public class PostClientController {
     public Mono<Object> createPost(@RequestBody Map<String,Object> postRequest){
         return postService.createPost(postRequest);
     }
+    @GetMapping("/{id}")
+    public Mono<Object> getPostById(@PathVariable int id) {
+        return postService.getPostById(id);
+    }
+
 }
