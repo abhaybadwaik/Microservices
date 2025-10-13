@@ -34,7 +34,10 @@ public class PostService {
                         response -> Mono.error(new RuntimeException("Client Error: " + response.statusCode())))
                 .onStatus(HttpStatusCode::is5xxServerError,
                         response -> Mono.error(new RuntimeException("Server Error: " + response.statusCode())))
-                .bodyToMono(Object.class);
+                .bodyToMono(Object.class)
+                .onErrorResume()
+                .doOnError();
+
     }
 
     public Mono<Object> createPost(Object postRequest) {

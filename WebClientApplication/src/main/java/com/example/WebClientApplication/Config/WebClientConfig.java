@@ -10,6 +10,7 @@ public class WebClientConfig {
     public WebClient webClient(){
         return WebClient.builder()
                 .baseUrl("https://jsonplaceholder.typicode.com")
+                .clientConnector()
                 .build();
     }
 
